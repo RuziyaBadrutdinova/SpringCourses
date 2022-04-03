@@ -17,7 +17,7 @@ public class TestSpring {
         TestBean testBean = context.getBean("testBean", TestBean.class); // первый агрумент это bean id, который в applicationContext, второй - объект (bean) какого класса хотим получить
 
         System.out.println(testBean.getName());
-        testBean.setName("ruzik");
+        testBean.setName("ruzikBadr");
         System.out.println(testBean.getName());
 
 
