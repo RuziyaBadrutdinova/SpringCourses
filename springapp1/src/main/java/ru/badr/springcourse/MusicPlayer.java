@@ -6,6 +6,26 @@ package ru.badr.springcourse;
  */
 public class MusicPlayer {
     private Music music;
+
+    private String name;
+    private int volume;
+
+    public String getName() {
+        return name;
+    }
+    //сеттеры использует спринг
+    public void setName(String name) {
+        this.name = name;
+    }
+    //в мейне будем получать
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+
     //Инверсия управления
     public MusicPlayer(Music music){
         this.music = music;

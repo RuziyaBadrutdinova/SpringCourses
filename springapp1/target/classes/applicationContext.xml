@@ -19,9 +19,19 @@
           class="ru.badr.springcourse.JazzMusic">
     </bean>
 
-    <bean id="musicPlayer"
+   <!-- <bean id="musicPlayer"
     class = "ru.badr.springcourse.MusicPlayer">
-        <constructor-arg ref="musicBean" />
+        <constructor-arg ref="musicBean" /> внедрение через конструктор-->
 
+    <!--property - внедрение зависимости через setter.  в name указывается имя setter, ref - ссылка а тот бин, который хотим использовать в качетсве зависимости
+    music это название setter-а setMusic. set отбрасывается, M заменяется на m
+    value - значение, которое мы хотим внедрить в сеттер
+    -->
+    <bean id="musicPlayer"
+          class="ru.badr.springcourse.MusicPlayer">
+          <property name="music" ref = "musicBean"/>
+         <property name ="name" value="Some name"/>
+         <property name="volume" value="50"/>
     </bean>
+
 </beans>
