@@ -10,7 +10,13 @@ public class MusicPlayer {
     public MusicPlayer(Music music){
         this.music = music;
     }
+    //создаем конструктор без параметров, чтобы в апп ини
+    public MusicPlayer(){}
 
+    //внедрение зависимости через setter
+    public void setMusic(Music music){
+        this.music = music;
+    }
     //здесь используется внедренная зависимость
     public void playMusic() {
         System.out.println("Playing " + music.getSong());
