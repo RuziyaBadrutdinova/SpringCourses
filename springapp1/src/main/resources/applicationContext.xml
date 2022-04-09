@@ -21,21 +21,41 @@
           class="ru.badr.springcourse.JazzMusic">
     </bean>
 
+    <bean id="rockMusicBean"
+          class="ru.badr.springcourse.RockMusic">
+    </bean>
+
+    <bean id="classicalMusicBean"
+          class="ru.badr.springcourse.ClassicalMusic">
+    </bean>
+
    <!-- <bean id="musicPlayer"
     class = "ru.badr.springcourse.MusicPlayer">
         <constructor-arg ref="musicBean" /> внедрение через конструктор-->
 
-    <!--property - внедрение зависимости через setter.  в name указывается имя setter, ref - ссылка а тот бин, который хотим использовать в качетсве зависимости
+    <!--property - внедрение зависимости через setter.  в name указывается имя setter, ref - ссылка на тот бин, который хотим использовать в качетсве зависимости
     music это название setter-а setMusic. set отбрасывается, M заменяется на m
     value - значение, которое мы хотим внедрить в сеттер
     -->
-    <bean id="musicPlayer"
+  <!--  <bean id="musicPlayer"
           class="ru.badr.springcourse.MusicPlayer">
           <property name="music" ref = "musicBean"/>
-       <!--  <property name ="name" value="Some name"/>
-         <property name="volume" value="50"/>-->
+       &lt;!&ndash;  <property name ="name" value="Some name"/>
+         <property name="volume" value="50"/>&ndash;&gt;
 
-        <!--для использования значений из файла пишем след образом:-->
+        &lt;!&ndash;для использования значений из файла пишем след образом:&ndash;&gt;
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
+    </bean>-->
+
+    <bean id="musicPlayer" class="ru.badr.springcourse.MusicPlayer">
+        <property name="musicList">
+            <list>
+                <ref bean="classicalMusicBean"/>
+                <ref bean="jazzMusicBean"/>
+                <ref bean="rockMusicBean"/>
+            </list>
+        </property>
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
