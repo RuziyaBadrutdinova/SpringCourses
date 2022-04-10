@@ -14,7 +14,11 @@
         <constructor-arg value="Ruziya"/>
     </bean>
     <bean id="musicBean"
-          class="ru.badr.springcourse.ClassicalMusic">
+          class="ru.badr.springcourse.ClassicalMusic"
+          scope="singleton"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getClassicalMusic">
     </bean>
 
     <bean id="jazzMusicBean"
@@ -37,18 +41,18 @@
     music это название setter-а setMusic. set отбрасывается, M заменяется на m
     value - значение, которое мы хотим внедрить в сеттер
     -->
-    <bean id="musicPlayer"
+   <!-- <bean id="musicPlayer"
           class="ru.badr.springcourse.MusicPlayer"
     scope="prototype">
           <property name="music" ref = "musicBean"/>
 
-       <!--  <property name ="name" value="Some name"/>
-         <property name="volume" value="50"/>-->
+       &lt;!&ndash;  <property name ="name" value="Some name"/>
+         <property name="volume" value="50"/>&ndash;&gt;
 
-        <!--для использования значений из файла пишем след образом:-->
+        &lt;!&ndash;для использования значений из файла пишем след образом:&ndash;&gt;
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+    </bean>-->
 
  <!-- дз  <bean id="musicPlayer" class="ru.badr.springcourse.MusicPlayer">
         <property name="musicList">

@@ -14,12 +14,16 @@ public class TestSpring {
 "applicationContext.xml"
         ); //applicationContext - передаем название конфигурационного файла спринга
         // важно, чтобы файл applicationContext лежал в папке resources, который помечен как ресурсы
-        TestBean testBean = context.getBean("testBean", TestBean.class); // первый агрумент это bean id, который в applicationContext, второй - объект (bean) какого класса хотим получить
+     /*   TestBean testBean = context.getBean("testBean", TestBean.class); // первый агрумент это bean id, который в applicationContext, второй - объект (bean) какого класса хотим получить
 
         System.out.println(testBean.getName());
         testBean.setName("ruzikBadr");
-        System.out.println(testBean.getName());
+        System.out.println(testBean.getName());*/
+        ClassicalMusic classicalMusic = context.getBean("musicBean", ClassicalMusic.class);
+        System.out.println(classicalMusic.getSong());
 
+        ClassicalMusic classicalMusic2 = context.getBean("musicBean", ClassicalMusic.class);
+        System.out.println(classicalMusic2.getSong());
 
 //lesson4
 /*        Music music = context.getBean("musicBean", Music.class);
@@ -34,7 +38,7 @@ public class TestSpring {
 
         //lesson 5
 //не внедряем зависимость вручную, а через спринг: в applicationContext
-        MusicPlayer firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+      /*  MusicPlayer firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
         MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 
        boolean comparison = firstMusicPlayer ==secondMusicPlayer;
@@ -45,7 +49,7 @@ public class TestSpring {
         firstMusicPlayer.setVolume(10);
         System.out.println(firstMusicPlayer.getVolume());
         System.out.println(secondMusicPlayer.getVolume());
-        firstMusicPlayer.playMusic();
+        firstMusicPlayer.playMusic();*/
       //  System.out.println(musicPlayer.getVolume());
         // после того, как поработали со  спрингом, с applicationContext, должны обязательно его закрыть
         context.close();
