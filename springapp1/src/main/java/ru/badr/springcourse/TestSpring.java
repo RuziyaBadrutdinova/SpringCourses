@@ -34,11 +34,19 @@ public class TestSpring {
 
         //lesson 5
 //не внедряем зависимость вручную, а через спринг: в applicationContext
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playMusicList();
+        MusicPlayer firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 
-      //  System.out.println(musicPlayer);
-        System.out.println(musicPlayer.getVolume());
+       boolean comparison = firstMusicPlayer ==secondMusicPlayer;
+        System.out.println(comparison);
+        System.out.println(firstMusicPlayer);
+        System.out.println(secondMusicPlayer);
+
+        firstMusicPlayer.setVolume(10);
+        System.out.println(firstMusicPlayer.getVolume());
+        System.out.println(secondMusicPlayer.getVolume());
+        firstMusicPlayer.playMusic();
+      //  System.out.println(musicPlayer.getVolume());
         // после того, как поработали со  спрингом, с applicationContext, должны обязательно его закрыть
         context.close();
     }

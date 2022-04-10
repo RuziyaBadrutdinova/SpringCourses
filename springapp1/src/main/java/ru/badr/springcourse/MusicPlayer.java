@@ -9,8 +9,8 @@ import java.util.List;
  * @since 02.04.2022
  */
 public class MusicPlayer {
-  //  private Music music;
-    private List<Music> musicList= new ArrayList<>();
+    private Music music;
+  //  private List<Music> musicList= new ArrayList<>();
 
     private String name;
     private int volume;
@@ -31,7 +31,7 @@ public class MusicPlayer {
         this.volume = volume;
     }
 
-   /* //Инверсия управления
+    //Инверсия управления
     public MusicPlayer(Music music){
         this.music = music;
     }
@@ -41,13 +41,12 @@ public class MusicPlayer {
     //внедрение зависимости через setter
     public void setMusic(Music music){
         this.music = music;
-    }*/
+    }
     //здесь используется внедренная зависимость
- /*   public void playMusic() {
+    public void playMusic() {
         System.out.println("Playing " + music.getSong());
     }
-*/
-    public void setMusicList(List<Music> musicList) {
+    /*public void setMusicList(List<Music> musicList) {
         this.musicList = musicList;
     }
     public void playMusicList(){
@@ -55,5 +54,5 @@ public class MusicPlayer {
             System.out.println("Playing " + muzika.getSong());
 
         }
-    }
+    }*/
 }

@@ -37,18 +37,20 @@
     music это название setter-а setMusic. set отбрасывается, M заменяется на m
     value - значение, которое мы хотим внедрить в сеттер
     -->
-  <!--  <bean id="musicPlayer"
-          class="ru.badr.springcourse.MusicPlayer">
+    <bean id="musicPlayer"
+          class="ru.badr.springcourse.MusicPlayer"
+    scope="prototype">
           <property name="music" ref = "musicBean"/>
-       &lt;!&ndash;  <property name ="name" value="Some name"/>
-         <property name="volume" value="50"/>&ndash;&gt;
 
-        &lt;!&ndash;для использования значений из файла пишем след образом:&ndash;&gt;
+       <!--  <property name ="name" value="Some name"/>
+         <property name="volume" value="50"/>-->
+
+        <!--для использования значений из файла пишем след образом:-->
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>-->
+    </bean>
 
-    <bean id="musicPlayer" class="ru.badr.springcourse.MusicPlayer">
+ <!-- дз  <bean id="musicPlayer" class="ru.badr.springcourse.MusicPlayer">
         <property name="musicList">
             <list>
                 <ref bean="classicalMusicBean"/>
@@ -58,6 +60,6 @@
         </property>
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+    </bean>-->
 
 </beans>
