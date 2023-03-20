@@ -8,8 +8,10 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
    <!-- resources находятся в classpath. Импортируем файл-->
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
+    <!--включает сканирование компонентов-->
+    <context:component-scan base-package="ru.badr.springcourse"/>
 
-    <bean id="testBean"
+   <!-- <bean id="testBean"
           class="ru.badr.springcourse.TestBean">
         <constructor-arg value="Ruziya"/>
     </bean>
@@ -32,7 +34,7 @@
     <bean id="classicalMusicBean"
           class="ru.badr.springcourse.ClassicalMusic">
     </bean>
-
+-->
    <!-- <bean id="musicPlayer"
     class = "ru.badr.springcourse.MusicPlayer">
         <constructor-arg ref="musicBean" /> внедрение через конструктор-->

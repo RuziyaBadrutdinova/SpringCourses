@@ -1,13 +1,16 @@
 package ru.badr.springcourse;
 
+import org.springframework.stereotype.Component;
+
 /**
  * @author RuziyaBadrutdinova
  * @since 02.04.2022
  */
+@Component
 public class ClassicalMusic implements Music {
     private ClassicalMusic(){} //приватный конструктор , ограничивает создание объекта через new
 
-    //фабричный метод должен быть статическим, т.е. должен вызываться на классе
+   /* //фабричный метод должен быть статическим, т.е. должен вызываться на классе
     //при синглтоне только 1 раз будет вызван этот фабричный метод, объект сохранит.
     //и каждый раз при вызове getBean будет возвращаться ссылка на этот единственный объект
     public static ClassicalMusic getClassicalMusic(){
@@ -18,7 +21,7 @@ public class ClassicalMusic implements Music {
     }
     public void doMyDestroy(){
         System.out.println("Doing my destruction");
-    }
+    }*/
     @Override
     public String getSong() {
         return "Hungarian Rhapsody";
